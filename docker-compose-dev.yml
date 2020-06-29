@@ -16,7 +16,10 @@ services:
       - "com.github.jrcs.letsencrypt_nginx_proxy_companion.nginx_proxy"
     networks:
       - web
-
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "50m"
 networks:
   web:
     external: true
